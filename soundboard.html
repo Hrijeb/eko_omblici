@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eko SoundBoard</title>
+    <link rel="stylesheet" href="soundboard.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="soundboard.html">SoundBoard</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+
+        <a href="https://discord.gg/n4yyXQdtD2" class="cta"><button>Join us</button></a>
+    </header>
+
+    <audio src="adri_cuclas.mp3" id="Cuclaš"></audio>
+    <audio src="adri_prska.mp3" id="Po_faci"></audio>
+    <audio src="adri_sheesh.mp3" id="Sheesh"></audio>
+    <audio src="adri_sus.mp3" id="Sus"></audio>
+    <audio src="jan_autism.mp3" id="Autism"></audio>
+    <audio src="jan_imocanin.mp3" id="Imočanin"></audio>
+    <audio src="jan_kurac.mp3" id="Kurac"></audio>
+    <audio src="jan_organi.mp3" id="Organi"></audio>
+    <audio src="mate_bodlja.mp3" id="Bodlja"></audio>
+    <audio src="mate_kupuciCovjek.mp3" id="Kipući_covjek"></audio>
+    <audio src="mate_ludost.mp3" id="Unknown"></audio>
+    <audio src="mate_nja.mp3" id="Njaa"></audio>
+    <audio src="pasko_thanos.mp3" id="Thanos"></audio>
+    <audio src="zitko_kondomi.mp3" id="Kondomi"></audio>
+
+    <div id="buttons"></div>
+
+    <script>
+
+        const sounds = [
+            'Cuclaš',
+            'Po_faci',
+            'Sheesh',
+            'Sus',
+            'Autism',
+            'Imočanin',
+            'Kurac',
+            'Organi',
+            'Bodlja',
+            'Kipući_covjek',
+            'Unknown',
+            'Njaa',
+            'Thanos',
+            'Kondomi'
+        ]
+
+        sounds.forEach((sound) => {
+            const btn = document.createElement('button');
+            btn.classList.add('btn');
+
+            btn.innerText = sound;
+
+            btn.addEventListener('click', () => {
+                stopSong();
+                document.getElementById(sound).play();
+            })
+
+            document.getElementById('buttons').appendChild(btn);
+
+            function stopSong() {
+                sounds.forEach((sound) => {
+                    const song = document.getElementById(sound);
+
+                    song.pause();
+                    song.currentTime = 0;
+                })
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -49,26 +49,3 @@ button {
 button:hover {
     background-color: rgba(0, 136, 169, 0.8);
 }
-
-/* novi kod ko nista */
-
-.horizontal-slider {
-    display: block;
-    width: 100%;
-    overflow-x: scroll;
-    margin-top: 150px;
-}
-
-.slider-container {
-    display: block;
-    white-space: nowrap;
-}
-
-.item {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.item img {
-    height: 550px;
-}
